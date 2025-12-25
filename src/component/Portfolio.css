@@ -5,7 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  
+
 }
 
 .portfolio-intro {
@@ -13,7 +13,7 @@
   height: 200px;
   text-align: center;
   margin-bottom: 60px;
-  background-color: rgb(28, 29, 28);
+  background-color: #0F5C3A;
   color: white;
   opacity: 0;
   transform: translateX(-100px);
@@ -37,7 +37,7 @@
 
 .portfolio-header h1 {
   font-size: 2.5rem;
-  color: #1f2937;
+  color: #0F5C3A;
   margin-bottom: 10px;
 }
 
@@ -57,7 +57,7 @@
 
 .portfolio-card-wrapper {
   position: relative;
-  width: 350px; 
+  width: 350px;
   opacity: 0;
   transform: translateX(-100px);
   animation: slideInRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
@@ -103,7 +103,7 @@
   .portfolio-intro h1 {
     font-size: 2rem;
   }
-  
+
   .portfolio-intro {
     height: auto;
     padding: 20px 0;
@@ -114,10 +114,11 @@
   }
 
   .portfolio-card-wrapper {
-    width: 90%; /* Responsive width */
+    width: 90%;
+    /* Responsive width */
     max-width: 350px;
   }
-  
+
   .portfolio-grid {
     gap: 30px;
   }
@@ -159,7 +160,7 @@
 
 .portfolio-card-bottom {
   height: 50%;
-  background-color: #2d3436; 
+  background-color: #0F5C3A;
   color: white;
   padding: 30px 20px;
   text-align: center;
@@ -177,14 +178,15 @@
 }
 
 .cyan-text {
-    color: #1dbce8; 
+  color: #D7262D;
   font-size: 1.2rem;
   margin-bottom: 20px;
   font-weight: 700;
 }
 
 .portfolio-card-bottom p {
-  color: #b2bec3; /* Light grey text */
+  color: #b2bec3;
+  /* Light grey text */
   font-size: 0.9rem;
   line-height: 1.6;
 }

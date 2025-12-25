@@ -3,7 +3,7 @@
   width: 100%;
   min-height: 600px;
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: radial-gradient(circle at center, #ffffff 0%, #ffffff 40%);
@@ -19,18 +19,21 @@
   transform: translate(-50%, -50%);
   width: 150%;
   height: 200%;
-  background: repeating-conic-gradient(
-    from 0deg,
-    rgba(59, 130, 246, 0.03) 0deg 2deg,
-    transparent 2deg 5deg
-  );
+  background: repeating-conic-gradient(from 0deg,
+      rgba(59, 130, 246, 0.03) 0deg 2deg,
+      transparent 2deg 5deg);
   z-index: 0;
   animation: rotateBackground 60s linear infinite;
 }
 
 @keyframes rotateBackground {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
 
 .cta-content {
@@ -49,7 +52,7 @@
 
 .cta-subtitle {
   font-size: 1rem;
-  color: #077796; 
+  color: #0F5C3A;
   font-weight: 600;
   margin: 0;
   text-transform: uppercase;
@@ -68,7 +71,7 @@
 .cta-button {
   margin-top: 15px;
   width: 150px;
-  background-color: #1e293b;
+  background-color: #D7262D;
   color: white;
   border: none;
   padding: 12px;
@@ -80,11 +83,11 @@
   align-items: center;
   gap: 10px;
   transition: transform 0.2s ease, background-color 0.2s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 10px rgba(215, 38, 45, 0.3);
 }
 
 .cta-button:hover {
-  background-color: #0f172a;
+  background-color: #B81F25;
   transform: translateY(-2px);
 }
 
@@ -112,9 +115,17 @@
 }
 
 @keyframes floatRobot {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0); }
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
 }
 
 
@@ -152,14 +163,14 @@
   background: white;
   padding: 8px 16px;
   border-radius: 50px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   border: 1px solid #f1f5f9;
   transition: transform 0.2s ease;
 }
 
 .cta-contact-item:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .cta-contact-item img {
@@ -179,7 +190,7 @@
 .cta-footer {
   width: 100%;
   padding: 10px 0;
-  margin-top: auto; 
+  margin-top: auto;
   position: relative;
   z-index: 2;
   border-top: 1px solid rgba(12, 12, 12, 0.2);
@@ -198,12 +209,12 @@
 }
 
 .cta-footer a {
-  color: #077796;
+  color: #0F5C3A;
   text-decoration: none;
 }
 
 .cta-footer a:hover {
-  color: black;
+  color: #D7262D;
   text-decoration: underline;
 }
 
@@ -217,7 +228,7 @@
   .cta-title {
     font-size: 2.5rem;
   }
-  
+
   .cta-image-container {
     position: relative;
     right: auto;
@@ -225,7 +236,7 @@
     margin-top: 30px;
     margin-bottom: 20px;
   }
-  
+
   .cta-logo {
     width: 100px;
   }
@@ -234,13 +245,13 @@
     padding: 60px 20px 0;
     min-height: auto;
   }
-  
+
   .cta-items-row {
     flex-direction: column;
     align-items: center;
     gap: 10px;
   }
-  
+
   .cta-footer {
     padding: 20px 10px;
   }
