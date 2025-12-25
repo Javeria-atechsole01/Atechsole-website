@@ -1,6 +1,6 @@
 import React from 'react'
 import './Navbar.css'
-import logo from '../assets/Atechsole-logo.png'
+import logo from '../assets/atechsole-new-logo.png'
 
 const Navbar = ({ onContactClick }) => {
   return (

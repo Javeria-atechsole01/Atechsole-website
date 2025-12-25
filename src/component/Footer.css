@@ -51,7 +51,6 @@
 .footer-logo {
   width: 50px;
   height: auto;
-  filter: brightness(0) invert(1);
 }
 
 .footer-brand-text {

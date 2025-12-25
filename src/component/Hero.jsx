@@ -1,6 +1,6 @@
 import React from 'react'
 import './Hero.css'
-import logo from '../assets/logo.png'
+import logo from '../assets/atechsole-new-logo.png'
 import heroText from '../assets/Atechsole-text.png'
 
 const Hero = () => {
@@ -14,8 +14,8 @@ const Hero = () => {
       <img src={heroText} alt="ATECHSOLE" className="hero-title-img" />
 
       <p className="hero-subtitle">
-        Empowering Your Business with Cutting-Edge Technology<br/>
-Specializing in Cybersecurity, Web Development, and AI Solutions
+        Empowering Your Business with Cutting-Edge Technology<br />
+        Specializing in Cybersecurity, Web Development, and AI Solutions
       </p>
 
       <div className="hero-actions">

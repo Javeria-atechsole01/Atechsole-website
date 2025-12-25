@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import logo from '../assets/logo.png'; // Using the white logo for dark background
+import logo from '../assets/atechsole-new-logo.png';
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -35,11 +35,11 @@ const Footer = () => {
           </div>
 
           <div className="footer-logo-wrapper">
-             <img src={logo} alt="ATechSole" className="footer-logo" />
-             <div className="footer-brand-text">
-                <span>ATECHSOLE</span>
-                <span className="brand-subtitle">SOLUTIONS</span>
-             </div>
+            <img src={logo} alt="ATechSole" className="footer-logo" />
+            <div className="footer-brand-text">
+              <span>ATECHSOLE</span>
+              <span className="brand-subtitle">SOLUTIONS</span>
+            </div>
           </div>
 
           <div className="footer-contact-info">
@@ -52,7 +52,7 @@ const Footer = () => {
         <div className="footer-right">
           <button className="scroll-top-btn" onClick={scrollToTop} aria-label="Scroll to top">
             <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <path d="M12 19V5M5 12l7-7 7 7" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M12 19V5M5 12l7-7 7 7" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
         </div>
@@ -62,7 +62,7 @@ const Footer = () => {
           <p>© 2025 ATechSole. All rights reserved. <span className="separator">|</span> <a href="#">Privacy Policy</a> <span className="separator">|</span> <a href="#">Terms of Service</a></p>
         </div>
       </div>
-      
+
     </footer>
   );
 };
