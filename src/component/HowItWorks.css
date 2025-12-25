@@ -15,7 +15,7 @@
 .hiw-title {
   font-size: 30px;
   font-weight: 800;
-  color: #1e293b;
+  color: #0F5C3A;
   margin-bottom: 16px;
 }
 
@@ -39,10 +39,10 @@
   top: 0;
   bottom: 0;
   width: 2.5px;
-  background: #5994f1;
+  background: #0F5C3A;
   opacity: 0.8;
   transform: translateX(-50%);
-  box-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
+  box-shadow: 0 0 10px rgba(15, 92, 58, 0.4);
 }
 
 .timeline-item {
@@ -60,7 +60,8 @@
 /* New Title Wrapper */
 .timeline-title-wrapper {
   position: absolute;
-  top: -30px; /* Position above the content */
+  top: -30px;
+  /* Position above the content */
   width: 50%;
   text-align: center;
   z-index: 4;
@@ -70,13 +71,15 @@
 .timeline-item.left .timeline-title-wrapper {
   left: 0;
   text-align: right;
-  padding-right: 40px; /* Aligns with content box */
+  padding-right: 40px;
+  /* Aligns with content box */
 }
 
 .timeline-item.right .timeline-title-wrapper {
   right: 0;
   text-align: left;
-  padding-left: 40px; /* Aligns with content box */
+  padding-left: 40px;
+  /* Aligns with content box */
 }
 
 .timeline-block-title {
@@ -86,7 +89,8 @@
 }
 
 .timeline-content {
-  width: 80px; /* Reduced width for icon only */
+  width: 80px;
+  /* Reduced width for icon only */
   height: 80px;
   background: #f8fafc;
   border-radius: 20px;
@@ -101,12 +105,15 @@
 
 @media (max-width: 768px) {
   .timeline-line {
-    left: 40px; /* Move line to the left */
+    left: 40px;
+    /* Move line to the left */
   }
 
   .timeline-item {
-    justify-content: flex-start; /* Align all to start */
-    padding-left: 80px; /* Space for line */
+    justify-content: flex-start;
+    /* Align all to start */
+    padding-left: 80px;
+    /* Space for line */
     flex-direction: column;
     align-items: flex-start;
   }
@@ -125,7 +132,7 @@
   .timeline-content {
     margin-left: 0;
   }
-  
+
   /* Reset left/right specific alignments */
   .timeline-item.left .timeline-title-wrapper,
   .timeline-item.right .timeline-title-wrapper {
@@ -139,24 +146,30 @@
 
 /* Positioning content closer to center line */
 .timeline-item.left .timeline-content {
-  margin-right: 20px; /* Reduced spacing from center */
-  margin-left: auto; /* Pushes to right side of left container */
+  margin-right: 20px;
+  /* Reduced spacing from center */
+  margin-left: auto;
+  /* Pushes to right side of left container */
 }
 
 .timeline-item.right .timeline-content {
-  margin-left: 20px; /* Reduced spacing from center */
-  margin-right: auto; /* Pushes to left side of right container */
+  margin-left: 20px;
+  /* Reduced spacing from center */
+  margin-right: auto;
+  /* Pushes to left side of right container */
 }
 
 /* Adjusted flex containers for left/right split */
 .timeline-item.left {
   justify-content: flex-end;
-  padding-right: 50%; /* Ends at center line */
+  padding-right: 50%;
+  /* Ends at center line */
 }
 
 .timeline-item.right {
   justify-content: flex-start;
-  padding-left: 50%; /* Starts at center line */
+  padding-left: 50%;
+  /* Starts at center line */
 }
 
 .timeline-icon svg {
@@ -167,13 +180,14 @@
 .timeline-dot {
   position: absolute;
   left: 50%;
-  top: 50%; /* Centered vertically relative to the item */
+  top: 50%;
+  /* Centered vertically relative to the item */
   transform: translate(-50%, -50%);
   width: 12px;
   height: 12px;
-  background: var(--primary);
+  background: #D7262D;
   border-radius: 50%;
-  box-shadow: 0 0 0 4px rgba(120, 169, 238, 0.2);
+  box-shadow: 0 0 0 4px rgba(215, 38, 45, 0.2);
   z-index: 3;
 }
 
@@ -228,7 +242,8 @@
 
 /* Specific positioning for Left Side Items */
 .timeline-item.left .timeline-popup {
-  right: 120%; /* Moved further out */
+  right: 120%;
+  /* Moved further out */
   left: auto;
   transform: translateY(-50%) translateX(10px);
 }
@@ -244,7 +259,8 @@
 
 /* Specific positioning for Right Side Items */
 .timeline-item.right .timeline-popup {
-  left: 120%; /* Moved further out */
+  left: 120%;
+  /* Moved further out */
   right: auto;
   transform: translateY(-50%) translateX(-10px);
 }
@@ -273,9 +289,10 @@
   .timeline-item.left,
   .timeline-item.right {
     justify-content: flex-start;
-    padding-left: 60px; /* Space for line */
+    padding-left: 60px;
+    /* Space for line */
   }
-  
+
   .timeline-title-wrapper {
     position: relative;
     top: 0;
@@ -288,11 +305,13 @@
   }
 
   .timeline-content {
-    margin: 0 !important; /* Reset margins */
+    margin: 0 !important;
+    /* Reset margins */
   }
 
   .timeline-dot {
     left: 24px;
-    top: 60px; /* Align with content roughly */
+    top: 60px;
+    /* Align with content roughly */
   }
 }

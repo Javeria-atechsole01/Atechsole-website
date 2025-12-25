@@ -13,15 +13,15 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(30, 30, 30, 0.85);
+  background: rgba(15, 92, 58, 0.95);
   backdrop-filter: blur(12px);
   padding: 6px 8px;
   border-radius: 50px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 25px rgba(15, 92, 58, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   overflow-x: visible;
-  scrollbar-width: none; 
-  -ms-overflow-style: none; 
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .floating-nav::-webkit-scrollbar {
@@ -55,7 +55,7 @@
 
 .nav-item.active {
   color: #fff;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(215, 38, 45, 0.9);
 }
 
 /* Dropdown Styling */
@@ -64,12 +64,12 @@
   bottom: calc(100% + 10px);
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(30, 30, 30, 0.95);
+  background: rgba(15, 92, 58, 0.98);
   backdrop-filter: blur(12px);
   border-radius: 12px;
   padding: 5px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 25px rgba(15, 92, 58, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   display: flex;
   flex-direction: column;
   gap: 2px;
@@ -103,18 +103,32 @@
 }
 
 .dropdown-item:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(215, 38, 45, 0.8);
   color: white;
 }
 
 @keyframes slideUp {
-  from { transform: translateY(100px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translate(-50%, 10px); }
-  to { opacity: 1; transform: translate(-50%, 0); }
+  from {
+    opacity: 0;
+    transform: translate(-50%, 10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
 }
 
 /* Responsive Scroll for Mobile */

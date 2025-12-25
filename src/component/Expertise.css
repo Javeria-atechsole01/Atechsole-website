@@ -24,7 +24,7 @@
   font-size: 35px;
   line-height: 1.1;
   font-weight: 700;
-  color: #1e293b;
+  color: #0F5C3A;
   text-transform: uppercase;
 }
 
@@ -63,19 +63,19 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: default;
 }
 
 .service-tag:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
   flex-direction: row-reverse;
 }
 
 .diamond {
-  color: #077796; 
+  color: #D7262D;
   font-size: 14px;
 }
 
@@ -106,19 +106,22 @@
 
   .services-column {
     width: 100%;
-    align-items: center !important; /* Force center alignment */
+    align-items: center !important;
+    /* Force center alignment */
   }
 
   .services-center {
-    order: -1; /* Move logo to top */
+    order: -1;
+    /* Move logo to top */
     width: 200px;
     height: 200px;
   }
-  
+
   .service-tag {
-    flex-direction: row !important; /* Reset hover reverse effect if needed or keep consistent */
+    flex-direction: row !important;
+    /* Reset hover reverse effect if needed or keep consistent */
   }
-  
+
   .service-tag:hover {
     flex-direction: row !important;
   }
@@ -128,7 +131,7 @@
   .services-title {
     font-size: 28px;
   }
-  
+
   .service-tag {
     font-size: 14px;
     padding: 10px 20px;
@@ -155,8 +158,17 @@
 }
 
 @keyframes pulse {
-  0%, 100% { transform: scale(1); opacity: 0.8; }
-  50% { transform: scale(1.1); opacity: 1; }
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -164,7 +176,7 @@
     flex-direction: column;
     gap: 40px;
   }
-  
+
   .services-column.left,
   .services-column.right {
     align-items: center;
@@ -174,7 +186,8 @@
   }
 
   .services-center {
-    order: -1; /* Logo above tags on mobile/tablet */
+    order: -1;
+    /* Logo above tags on mobile/tablet */
     width: 200px;
     height: 200px;
   }
@@ -184,6 +197,7 @@
   .services-title {
     font-size: 32px;
   }
+
   .service-tag {
     font-size: 13px;
     padding: 10px 18px;

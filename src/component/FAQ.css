@@ -12,7 +12,7 @@
   text-align: center;
   font-size: 2.5rem;
   font-weight: 800;
-  color: #1e293b;
+  color: #0F5C3A;
   margin-bottom: 10px;
   letter-spacing: 1px;
 }
@@ -27,7 +27,7 @@
 .faq-list {
   display: flex;
   flex-direction: column;
-  gap: 20px; 
+  gap: 20px;
 }
 
 .faq-item {
@@ -39,7 +39,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #ffffff; 
+  background: #ffffff;
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -54,10 +54,10 @@
 }
 
 .faq-item.active .faq-question {
-  transform: scale(1.03); 
+  transform: scale(1.03);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   border-color: transparent;
-  z-index: 10; 
+  z-index: 10;
   background: #ffffff;
 }
 
@@ -89,7 +89,7 @@
 
 .faq-item.active .faq-icon {
   transform: rotate(180deg);
-  background-color: #077796; 
+  background-color: #0F5C3A;
   color: white;
 }
 
@@ -98,14 +98,18 @@
   overflow: hidden;
   transition: max-height 0.5s ease-out, opacity 0.3s ease;
   opacity: 0;
-  background: transparent; /* Transparent background as requested */
-  padding: 0 24px; /* Align text with card content */
+  background: transparent;
+  /* Transparent background as requested */
+  padding: 0 24px;
+  /* Align text with card content */
 }
 
 .faq-item.active .faq-answer {
-  max-height: 200px; /* Adjust based on content */
+  max-height: 200px;
+  /* Adjust based on content */
   opacity: 1;
-  padding-top: 15px; /* Add space between card and text */
+  padding-top: 15px;
+  /* Add space between card and text */
 }
 
 .faq-answer p {
@@ -120,15 +124,15 @@
   .faq-title {
     font-size: 2rem;
   }
-  
+
   .faq-question {
     padding: 16px 20px;
   }
-  
+
   .faq-question h3 {
     font-size: 1rem;
   }
-  
+
   .faq-answer p {
     font-size: 0.95rem;
   }
