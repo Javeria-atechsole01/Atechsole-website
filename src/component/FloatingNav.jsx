@@ -1,0 +1,121 @@
+import React, { useState, useEffect } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
+import './FloatingNav.css'
+
+const FloatingNav = () => {
+  const [isVisible, setIsVisible] = useState(false)
+  const [activeTab, setActiveTab] = useState('Home')
+  const [isGalleryHovered, setIsGalleryHovered] = useState(false)
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Always show on non-home pages
+      if (location.pathname !== '/') {
+        setIsVisible(true)
+        return
+      }
+
+      // Show navbar immediately after scrolling starts on home page
+      if (window.scrollY > 20) {
+        setIsVisible(true)
+        return
+      }
+      
+      setIsVisible(false)
+    }
+
+    handleScroll() // Initial check
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [location.pathname])
+
+  useEffect(() => {
+    if (location.pathname === '/about') setActiveTab('About')
+    else if (location.pathname === '/blog') setActiveTab('Blog')
+    else if (location.pathname === '/portfolio') setActiveTab('Portfolio')
+    else if (location.pathname === '/events') setActiveTab('Events')
+    else if (location.pathname.startsWith('/gallery')) setActiveTab('Gallery')
+    else if (location.pathname === '/') setActiveTab('Home')
+  }, [location])
+
+  const navItems = [
+    { label: 'Home', path: '/' },
+    { label: 'About', path: '/about' },
+    { label: 'Portfolio', path: '/portfolio' },
+    { label: 'Blog', path: '/blog' },
+    { label: 'Events', path: '/events' },
+    { 
+      label: 'Gallery', 
+      isDropdown: true,
+      children: [
+        { label: 'Photos', path: '/gallery/photos' },
+        { label: 'Videos', path: '/gallery/videos' }
+      ]
+    }
+  ]
+
+  const handleNavClick = (item) => {
+    if (item.isDropdown) return;
+    
+    setActiveTab(item.label)
+    if (item.path) {
+      navigate(item.path)
+      window.scrollTo(0, 0)
+    } else {
+      navigate('/')
+      setTimeout(() => {
+        const element = document.getElementById(item.label.toLowerCase())
+        if (element) element.scrollIntoView({ behavior: 'smooth' })
+      }, 100)
+    }
+  }
+
+  const handleDropdownClick = (child) => {
+    setActiveTab('Gallery')
+    navigate(child.path)
+    window.scrollTo(0, 0)
+    setIsGalleryHovered(false)
+  }
+
+  if (!isVisible) return null
+
+  return (
+    <div className="floating-nav-container">
+      <nav className="floating-nav">
+        {navItems.map((item) => (
+          <div 
+            key={item.label} 
+            className="nav-item-wrapper"
+            onMouseEnter={() => item.isDropdown && setIsGalleryHovered(true)}
+            onMouseLeave={() => item.isDropdown && setIsGalleryHovered(false)}
+          >
+            <button
+              className={`nav-item ${activeTab === item.label ? 'active' : ''}`}
+              onClick={() => handleNavClick(item)}
+            >
+              {item.label}
+            </button>
+            
+            {item.isDropdown && isGalleryHovered && (
+              <div className="nav-dropdown">
+                {item.children.map((child) => (
+                  <button
+                    key={child.label}
+                    className="dropdown-item"
+                    onClick={() => handleDropdownClick(child)}
+                  >
+                    {child.label}
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+        ))}
+      </nav>
+    </div>
+  )
+}
+
+export default FloatingNav

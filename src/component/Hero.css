@@ -1,0 +1,103 @@
+.hero{
+  position: relative;
+  min-height: calc(100dvh - 68px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 40px 20px 60px;
+  background:
+    radial-gradient(1200px 500px at 50% 10%, rgba(64, 152, 255, .15), transparent 60%),
+    linear-gradient(180deg, #fff 20%, #d8f1f3 40%, #ffffff 100%);
+}
+
+.hero-top{
+  position: absolute;
+  top: 16px;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  pointer-events: none;
+}
+
+.hero-badge{
+  width: 90px;
+  height: 90px;
+  margin-top: 30px;
+  opacity: .5;  
+  filter: drop-shadow(0 6px 16px rgba(0,0,0,.12));
+}
+.hero-badge1{
+  width: 5%;
+  height: 50px;
+  margin-right: 30%;
+  opacity: .5;  
+  filter: drop-shadow(0 6px 16px rgba(0,0,0,.12));
+}
+.hero-badge1.right{ 
+  animation: float-right 5s ease-in-out infinite;
+}
+.hero-badge.left{ 
+  animation: float-left 4s ease-in-out infinite;
+}
+
+@keyframes float-left {
+  0%, 100% { transform: translateX(200px) translateY(0); }
+  50% { transform: translateX(200px) translateY(-20px); }
+}
+
+@keyframes float-right {
+  0%, 100% { transform: translateY(200px); }
+  50% { transform: translateY(180px); }
+}
+
+.hero-title-img{
+  margin-top: 60px;
+  width: 30%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(10px 7px 18px rgba(0,0,0,.08));
+}
+
+.hero-subtitle{
+  max-width: 900px;
+  margin-top: 18px;
+  color: #3b3b3b;
+  font-size: clamp(12px, 2.8vw, 17px);
+}
+
+.hero-actions{
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+}
+.follow-label{
+  color: #5a5a5a;
+  font-weight: 600;
+}
+.social-icon{
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #0a0a0a;
+  transition: transform .2s ease, background .2s ease;
+}
+.social-icon:hover{
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px){
+  .hero{
+    min-height: auto;
+    padding: 28px 16px 40px;
+  }
+  .hero-top{ display: none; }
+  .hero-subtitle{ margin-top: 16px; }
+}
