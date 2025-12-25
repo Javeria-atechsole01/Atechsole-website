@@ -9,11 +9,24 @@
   text-align: center;
   padding: 80px 20px;
   overflow: hidden;
-  background:
-    linear-gradient(135deg, #0F5C3A 0%, #0a4a2e 50%, #073621 100%);
+  /* Brand-aligned gradient */
+  background: linear-gradient(135deg, #0F5C3A 0%, #147A5B 100%);
 }
 
-/* Geometric Pattern Overlay */
+/* Overlay for text contrast */
+.hero::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(15, 92, 58, 0.4) 0%, rgba(20, 122, 91, 0.3) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Geometric Pattern Overlay - Tech Grid */
 .hero::before {
   content: '';
   position: absolute;
@@ -22,9 +35,15 @@
   right: 0;
   bottom: 0;
   background-image:
-    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
+    /* Grid lines */
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    /* Accent dots with subtle red hints */
+    radial-gradient(circle at 25% 25%, rgba(215, 38, 45, 0.05) 2px, transparent 2px),
+    radial-gradient(circle at 75% 75%, rgba(215, 38, 45, 0.05) 2px, transparent 2px),
+    /* Light green nodes */
+    radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.04) 3px, transparent 3px);
+  background-size: 80px 80px, 80px 80px, 160px 160px, 160px 160px, 120px 120px;
   pointer-events: none;
   z-index: 1;
 }
