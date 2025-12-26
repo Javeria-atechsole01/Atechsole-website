@@ -5,7 +5,7 @@ import './FloatingNav.css'
 const FloatingNav = () => {
   const [isVisible, setIsVisible] = useState(false)
   const [activeTab, setActiveTab] = useState('Home')
-  const [isGalleryHovered, setIsGalleryHovered] = useState(false)
+  const [hoveredDropdown, setHoveredDropdown] = useState(null)
   const navigate = useNavigate()
   const location = useLocation()
 
@@ -22,7 +22,7 @@ const FloatingNav = () => {
         setIsVisible(true)
         return
       }
-      
+
       setIsVisible(false)
     }
 
@@ -37,17 +37,27 @@ const FloatingNav = () => {
     else if (location.pathname === '/portfolio') setActiveTab('Portfolio')
     else if (location.pathname === '/events') setActiveTab('Events')
     else if (location.pathname.startsWith('/gallery')) setActiveTab('Gallery')
+    else if (location.pathname.startsWith('/services')) setActiveTab('Services')
     else if (location.pathname === '/') setActiveTab('Home')
   }, [location])
 
   const navItems = [
     { label: 'Home', path: '/' },
     { label: 'About', path: '/about' },
+    {
+      label: 'Services',
+      isDropdown: true,
+      children: [
+        { label: 'Development', path: '/services/development' },
+        { label: 'Cybersecurity', path: '/services/cybersecurity' },
+        { label: 'AI Services', path: '/services/ai' }
+      ]
+    },
     { label: 'Portfolio', path: '/portfolio' },
     { label: 'Blog', path: '/blog' },
     { label: 'Events', path: '/events' },
-    { 
-      label: 'Gallery', 
+    {
+      label: 'Gallery',
       isDropdown: true,
       children: [
         { label: 'Photos', path: '/gallery/photos' },
@@ -58,7 +68,7 @@ const FloatingNav = () => {
 
   const handleNavClick = (item) => {
     if (item.isDropdown) return;
-    
+
     setActiveTab(item.label)
     if (item.path) {
       navigate(item.path)
@@ -72,11 +82,11 @@ const FloatingNav = () => {
     }
   }
 
-  const handleDropdownClick = (child) => {
-    setActiveTab('Gallery')
+  const handleDropdownClick = (child, parentLabel) => {
+    setActiveTab(parentLabel)
     navigate(child.path)
     window.scrollTo(0, 0)
-    setIsGalleryHovered(false)
+    setHoveredDropdown(null)
   }
 
   if (!isVisible) return null
@@ -85,11 +95,11 @@ const FloatingNav = () => {
     <div className="floating-nav-container">
       <nav className="floating-nav">
         {navItems.map((item) => (
-          <div 
-            key={item.label} 
+          <div
+            key={item.label}
             className="nav-item-wrapper"
-            onMouseEnter={() => item.isDropdown && setIsGalleryHovered(true)}
-            onMouseLeave={() => item.isDropdown && setIsGalleryHovered(false)}
+            onMouseEnter={() => item.isDropdown && setHoveredDropdown(item.label)}
+            onMouseLeave={() => item.isDropdown && setHoveredDropdown(null)}
           >
             <button
               className={`nav-item ${activeTab === item.label ? 'active' : ''}`}
@@ -97,14 +107,14 @@ const FloatingNav = () => {
             >
               {item.label}
             </button>
-            
-            {item.isDropdown && isGalleryHovered && (
+
+            {item.isDropdown && hoveredDropdown === item.label && (
               <div className="nav-dropdown">
                 {item.children.map((child) => (
                   <button
                     key={child.label}
                     className="dropdown-item"
-                    onClick={() => handleDropdownClick(child)}
+                    onClick={() => handleDropdownClick(child, item.label)}
                   >
                     {child.label}
                   </button>
@@ -119,3 +129,4 @@ const FloatingNav = () => {
 }
 
 export default FloatingNav
+

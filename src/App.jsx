@@ -13,6 +13,10 @@ import Events from './component/Events.jsx'
 import Photos from './component/Photos.jsx'
 import Videos from './component/Videos.jsx'
 import FloatingContact from './component/FloatingContact.jsx'
+// Services Pages
+import AIServices from './component/services/AIServices.jsx'
+import DevelopmentServices from './component/services/DevelopmentServices.jsx'
+import CybersecurityServices from './component/services/CybersecurityServices.jsx'
 
 const App = () => {
   const [isContactOpen, setIsContactOpen] = useState(false);
@@ -21,13 +25,13 @@ const App = () => {
   const openContact = () => setIsContactOpen(true);
   const closeContact = () => setIsContactOpen(false);
 
-  const isNavbarHidden = ['/about', '/blog', '/portfolio', '/events', '/gallery/photos', '/gallery/videos'].includes(location.pathname);
+  const isNavbarHidden = ['/about', '/blog', '/portfolio', '/events', '/gallery/photos', '/gallery/videos', '/services/ai', '/services/development', '/services/cybersecurity'].includes(location.pathname);
 
   return (
     <div>
       <CustomCursor />
       {!isNavbarHidden && <Navbar onContactClick={openContact} />}
-      
+
       <Routes>
         <Route path="/" element={<Home openContact={openContact} />} />
         <Route path="/about" element={<About />} />
@@ -36,14 +40,19 @@ const App = () => {
         <Route path="/events" element={<Events />} />
         <Route path="/gallery/photos" element={<Photos />} />
         <Route path="/gallery/videos" element={<Videos />} />
+        {/* Services Routes */}
+        <Route path="/services/ai" element={<AIServices />} />
+        <Route path="/services/development" element={<DevelopmentServices />} />
+        <Route path="/services/cybersecurity" element={<CybersecurityServices />} />
       </Routes>
 
       <FloatingNav />
       <ContactModal isOpen={isContactOpen} onClose={closeContact} />
       <FloatingContact />
-     
+
     </div>
   )
 }
 
 export default App
+
