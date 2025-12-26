@@ -33,7 +33,7 @@ const VideoSection = () => {
         {/* Right Column - Content (relocated from Hero) */}
         <div className="content-column">
           <h1 className="section-headline">
-            Empowering Your Business with <span className="highlight">Cutting-Edge</span> Technology
+            Empowering Your Business<br />with <span className="highlight">Cutting-Edge</span> Technology
           </h1>
 
           <p className="section-subtitle">
