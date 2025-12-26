@@ -4,7 +4,7 @@
   width: 100%;
   height: 100vh;
   overflow: hidden;
-  background-color: #0F5C3A;
+  background-color: #000;
 }
 
 .hero-background-video {
@@ -20,19 +20,9 @@
   z-index: 1;
 }
 
-/* Subtle brand overlay for cinematic look */
+/* Subtle overlay for cinematic look */
 .hero-video-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to bottom,
-      rgba(15, 92, 58, 0.1) 0%,
-      rgba(15, 92, 58, 0.05) 50%,
-      rgba(15, 92, 58, 0.2) 100%);
-  z-index: 2;
-  pointer-events: none;
+  display: none;
 }
 
 /* Responsive */
