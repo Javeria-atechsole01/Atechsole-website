@@ -12,9 +12,15 @@
   backdrop-filter: blur(10px);
 }
 
+.nav-left {
+  display: flex;
+  align-items: center;
+}
+
 .nav-left img {
-  width: 100%;
-  height: 60px;
+  height: 50px;
+  width: auto;
+  object-fit: contain;
 }
 
 .nav-right .cta {
